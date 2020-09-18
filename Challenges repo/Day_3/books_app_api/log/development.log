@@ -1,0 +1,1152 @@
+  [1m[35m (1750.6ms)[0m  [1m[35mCREATE DATABASE "books_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (1608.5ms)[0m  [1m[35mCREATE DATABASE "books_app_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (134.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (72.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1462267875387580695)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBooks (20200918185328)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (99.3ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying, "author" character varying, "genre" character varying, "publisher" character varying, "publish_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200918185328"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-09-18 18:54:37.925443"], ["updated_at", "2020-09-18 18:54:37.925443"]]
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1462267875387580695)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Stranger in a Strange Land"], ["author", "Casey Leannon"], ["genre", "Narrative nonfiction"], ["publisher", "Barrie & Jenkins"], ["publish_date", "2019-09-28"], ["created_at", "2020-09-18 18:58:37.903955"], ["updated_at", "2020-09-18 18:58:37.903955"]]
+  [1m[35m (26.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Françoise Sagan"], ["author", "Zachary Homenick"], ["genre", "Humor"], ["publisher", "Library of America"], ["publish_date", "2020-09-05"], ["created_at", "2020-09-18 18:58:37.933509"], ["updated_at", "2020-09-18 18:58:37.933509"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Road Less Traveled"], ["author", "Laureen Lindgren"], ["genre", "Tall tale"], ["publisher", "McClelland and Stewart"], ["publish_date", "2020-01-26"], ["created_at", "2020-09-18 18:58:37.945302"], ["updated_at", "2020-09-18 18:58:37.945302"]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Needle's Eye"], ["author", "Raleigh Boyer"], ["genre", "Realistic fiction"], ["publisher", "Ignatius Press"], ["publish_date", "2019-10-05"], ["created_at", "2020-09-18 18:58:37.958478"], ["updated_at", "2020-09-18 18:58:37.958478"]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["author", "Luis Wunsch"], ["genre", "Tall tale"], ["publisher", "Sams Publishing"], ["publish_date", "2020-04-18"], ["created_at", "2020-09-18 18:58:37.970368"], ["updated_at", "2020-09-18 18:58:37.970368"]]
+  [1m[35m (31.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Sleep the Brave"], ["author", "Ada Bechtelar"], ["genre", "Historical fiction"], ["publisher", "University of Alaska Press"], ["publish_date", "2020-03-17"], ["created_at", "2020-09-18 18:58:38.006180"], ["updated_at", "2020-09-18 18:58:38.006180"]]
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Man Within"], ["author", "Burl Hayes"], ["genre", "Reference book"], ["publisher", "Orchard Books"], ["publish_date", "2020-07-18"], ["created_at", "2020-09-18 18:58:38.028857"], ["updated_at", "2020-09-18 18:58:38.028857"]]
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Waiting for the Barbarians"], ["author", "Felisha Wunsch"], ["genre", "Narrative nonfiction"], ["publisher", "Fairview Press"], ["publish_date", "2020-04-03"], ["created_at", "2020-09-18 18:58:38.050677"], ["updated_at", "2020-09-18 18:58:38.050677"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Look Homeward, Angel"], ["author", "Gov. Rupert Swift"], ["genre", "Fantasy"], ["publisher", "Bison Books"], ["publish_date", "2019-12-21"], ["created_at", "2020-09-18 18:58:38.070938"], ["updated_at", "2020-09-18 18:58:38.070938"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Surprised by Joy"], ["author", "Ira Ritchie III"], ["genre", "Crime/Detective"], ["publisher", "Candlewick Press"], ["publish_date", "2019-12-17"], ["created_at", "2020-09-18 18:58:38.091361"], ["updated_at", "2020-09-18 18:58:38.091361"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Time To Murder And Create"], ["author", "Ty Runolfsdottir"], ["genre", "Metafiction"], ["publisher", "André Deutsch"], ["publish_date", "2019-12-26"], ["created_at", "2020-09-18 18:58:38.112349"], ["updated_at", "2020-09-18 18:58:38.112349"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That Hideous Strength"], ["author", "Marcos Rodriguez"], ["genre", "Science fiction"], ["publisher", "Ian Allan Publishing"], ["publish_date", "2020-02-03"], ["created_at", "2020-09-18 18:58:38.132874"], ["updated_at", "2020-09-18 18:58:38.132874"]]
+  [1m[35m (43.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "If I Forget Thee Jerusalem"], ["author", "Edwardo Rath"], ["genre", "Speech"], ["publisher", "Parragon"], ["publish_date", "2020-01-20"], ["created_at", "2020-09-18 18:58:38.183714"], ["updated_at", "2020-09-18 18:58:38.183714"]]
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["author", "Delmer Dickinson MD"], ["genre", "Speech"], ["publisher", "Karadi Tales"], ["publish_date", "2020-03-29"], ["created_at", "2020-09-18 18:58:38.202311"], ["updated_at", "2020-09-18 18:58:38.202311"]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Great Work of Time"], ["author", "Amb. Mitch Heaney"], ["genre", "Mystery"], ["publisher", "Zed Books"], ["publish_date", "2020-04-14"], ["created_at", "2020-09-18 18:58:38.223485"], ["updated_at", "2020-09-18 18:58:38.223485"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "O Jerusalem!"], ["author", "Robby Wyman"], ["genre", "Science fiction"], ["publisher", "Elsevier"], ["publish_date", "2020-03-04"], ["created_at", "2020-09-18 18:58:38.243989"], ["updated_at", "2020-09-18 18:58:38.243989"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Brandy of the Damned"], ["author", "Latrisha Crist"], ["genre", "Fairy tale"], ["publisher", "John Blake Publishing"], ["publish_date", "2020-07-16"], ["created_at", "2020-09-18 18:58:38.264967"], ["updated_at", "2020-09-18 18:58:38.264967"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Tender Is the Night"], ["author", "Miss Gustavo Langosh"], ["genre", "Science fiction"], ["publisher", "Happy House"], ["publish_date", "2019-11-17"], ["created_at", "2020-09-18 18:58:38.285512"], ["updated_at", "2020-09-18 18:58:38.285512"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "That Hideous Strength"], ["author", "Mrs. Fidel Rippin"], ["genre", "Tall tale"], ["publisher", "Allen Ltd"], ["publish_date", "2020-01-19"], ["created_at", "2020-09-18 18:58:38.305418"], ["updated_at", "2020-09-18 18:58:38.305418"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "For a Breath I Tarry"], ["author", "Sheri Halvorson"], ["genre", "Essay"], ["publisher", "HMSO"], ["publish_date", "2020-03-03"], ["created_at", "2020-09-18 18:58:38.326583"], ["updated_at", "2020-09-18 18:58:38.326583"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Fear and Trembling"], ["author", "Gus Bartell"], ["genre", "Mythopoeia"], ["publisher", "Central European University Press"], ["publish_date", "2019-12-07"], ["created_at", "2020-09-18 18:58:38.346950"], ["updated_at", "2020-09-18 18:58:38.346950"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "A Monstrous Regiment of Women"], ["author", "Damaris Hackett"], ["genre", "Humor"], ["publisher", "Pecan Grove Press"], ["publish_date", "2019-12-16"], ["created_at", "2020-09-18 18:58:38.368176"], ["updated_at", "2020-09-18 18:58:38.368176"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.7ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Nine Coaches Waiting"], ["author", "Talia Kris"], ["genre", "Science fiction"], ["publisher", "Zed Books"], ["publish_date", "2020-07-20"], ["created_at", "2020-09-18 18:58:38.388857"], ["updated_at", "2020-09-18 18:58:38.388857"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Proper Study"], ["author", "Eugenie Wolff"], ["genre", "Western"], ["publisher", "Libertas Academica"], ["publish_date", "2020-04-26"], ["created_at", "2020-09-18 18:58:38.409754"], ["updated_at", "2020-09-18 18:58:38.409754"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "An Evil Cradling"], ["author", "Leena Kautzer"], ["genre", "Comic/Graphic Novel"], ["publisher", "Scholastic Press"], ["publish_date", "2020-06-17"], ["created_at", "2020-09-18 18:58:38.429874"], ["updated_at", "2020-09-18 18:58:38.429874"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Wealth of Nations"], ["author", "Ermelinda Turcotte"], ["genre", "Horror"], ["publisher", "Lion Hudson"], ["publish_date", "2019-10-17"], ["created_at", "2020-09-18 18:58:38.450146"], ["updated_at", "2020-09-18 18:58:38.450146"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "A Passage to India"], ["author", "Marna Gutmann IV"], ["genre", "Short story"], ["publisher", "Mandrake Press"], ["publish_date", "2020-03-01"], ["created_at", "2020-09-18 18:58:38.474349"], ["updated_at", "2020-09-18 18:58:38.474349"]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Vanity Fair"], ["author", "Thresa Will"], ["genre", "Biography/Autobiography"], ["publisher", "Leaf Books"], ["publish_date", "2020-06-16"], ["created_at", "2020-09-18 18:58:38.491527"], ["updated_at", "2020-09-18 18:58:38.491527"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Moon by Night"], ["author", "Santos Wilkinson II"], ["genre", "Biography/Autobiography"], ["publisher", "No Starch Press"], ["publish_date", "2020-03-31"], ["created_at", "2020-09-18 18:58:38.512691"], ["updated_at", "2020-09-18 18:58:38.512691"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Taming a Sea Horse"], ["author", "Neta Price"], ["genre", "Mystery"], ["publisher", "Reed Elsevier"], ["publish_date", "2020-06-27"], ["created_at", "2020-09-18 18:58:38.532941"], ["updated_at", "2020-09-18 18:58:38.532941"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "To Say Nothing of the Dog"], ["author", "Wendolyn Bradtke"], ["genre", "Western"], ["publisher", "Mandrake of Oxford"], ["publish_date", "2020-03-20"], ["created_at", "2020-09-18 18:58:38.554250"], ["updated_at", "2020-09-18 18:58:38.554250"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Lathe of Heaven"], ["author", "Carol Huel"], ["genre", "Mythopoeia"], ["publisher", "Jarrolds Publishing"], ["publish_date", "2019-11-27"], ["created_at", "2020-09-18 18:58:38.574687"], ["updated_at", "2020-09-18 18:58:38.574687"]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Infinite Jest"], ["author", "Jed Becker"], ["genre", "Narrative nonfiction"], ["publisher", "Mainstream Publishing"], ["publish_date", "2020-09-17"], ["created_at", "2020-09-18 18:58:38.594985"], ["updated_at", "2020-09-18 18:58:38.594985"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Great Work of Time"], ["author", "Nicolasa O'Reilly"], ["genre", "Mythopoeia"], ["publisher", "Holt McDougal"], ["publish_date", "2019-10-18"], ["created_at", "2020-09-18 18:58:38.615831"], ["updated_at", "2020-09-18 18:58:38.615831"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "In Dubious Battle"], ["author", "Ms. Jon Doyle"], ["genre", "Suspense/Thriller"], ["publisher", "University of Akron Press"], ["publish_date", "2020-05-27"], ["created_at", "2020-09-18 18:58:38.636456"], ["updated_at", "2020-09-18 18:58:38.636456"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Rosemary Sutcliff"], ["author", "Misti Roob VM"], ["genre", "Folklore"], ["publisher", "G. P. Putnam's Sons"], ["publish_date", "2020-06-19"], ["created_at", "2020-09-18 18:58:38.657644"], ["updated_at", "2020-09-18 18:58:38.657644"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Consider the Lilies"], ["author", "Caleb Maggio"], ["genre", "Fanfiction"], ["publisher", "Ballantine Books"], ["publish_date", "2020-07-19"], ["created_at", "2020-09-18 18:58:38.677483"], ["updated_at", "2020-09-18 18:58:38.677483"]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Moving Finger"], ["author", "Bennie Kuhn"], ["genre", "Biography/Autobiography"], ["publisher", "Parachute Publishing"], ["publish_date", "2019-12-27"], ["created_at", "2020-09-18 18:58:38.698709"], ["updated_at", "2020-09-18 18:58:38.698709"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Daffodil Sky"], ["author", "Jenelle Emmerich"], ["genre", "Textbook"], ["publisher", "Charles Scribner's Sons"], ["publish_date", "2020-08-16"], ["created_at", "2020-09-18 18:58:38.719021"], ["updated_at", "2020-09-18 18:58:38.719021"]]
+  [1m[35m (13.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "A Confederacy of Dunces"], ["author", "Valery Beer Esq."], ["genre", "Tall tale"], ["publisher", "Black Sparrow Books"], ["publish_date", "2020-05-16"], ["created_at", "2020-09-18 18:58:38.739273"], ["updated_at", "2020-09-18 18:58:38.739273"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "In a Dry Season"], ["author", "Shanika Ziemann"], ["genre", "Classic"], ["publisher", "Farrar, Straus & Giroux"], ["publish_date", "2020-09-14"], ["created_at", "2020-09-18 18:58:38.760423"], ["updated_at", "2020-09-18 18:58:38.760423"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Man Within"], ["author", "Linwood Fadel"], ["genre", "Humor"], ["publisher", "Blackstaff Press"], ["publish_date", "2020-03-12"], ["created_at", "2020-09-18 18:58:38.780883"], ["updated_at", "2020-09-18 18:58:38.780883"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "All the King's Men"], ["author", "Lincoln Mills"], ["genre", "Western"], ["publisher", "McGraw Hill Financial"], ["publish_date", "2019-12-04"], ["created_at", "2020-09-18 18:58:38.802066"], ["updated_at", "2020-09-18 18:58:38.802066"]]
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Specimen Days"], ["author", "Bo Quitzon"], ["genre", "Fantasy"], ["publisher", "Schocken Books"], ["publish_date", "2019-10-19"], ["created_at", "2020-09-18 18:58:38.822092"], ["updated_at", "2020-09-18 18:58:38.822092"]]
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Clouds of Witness"], ["author", "Clement Stokes"], ["genre", "Essay"], ["publisher", "FabJob"], ["publish_date", "2019-10-26"], ["created_at", "2020-09-18 18:58:38.843346"], ["updated_at", "2020-09-18 18:58:38.843346"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Consider the Lilies"], ["author", "Walter Beatty"], ["genre", "Mythology"], ["publisher", "Bison Books"], ["publish_date", "2020-03-06"], ["created_at", "2020-09-18 18:58:38.863703"], ["updated_at", "2020-09-18 18:58:38.863703"]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Blithe Spirit"], ["author", "Enriqueta Sporer"], ["genre", "Science fiction"], ["publisher", "Taunton Press"], ["publish_date", "2020-05-30"], ["created_at", "2020-09-18 18:58:38.884050"], ["updated_at", "2020-09-18 18:58:38.884050"]]
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dance Dance Dance"], ["author", "Maile Kris DDS"], ["genre", "Essay"], ["publisher", "University of Chicago Press"], ["publish_date", "2020-01-03"], ["created_at", "2020-09-18 18:58:38.905043"], ["updated_at", "2020-09-18 18:58:38.905043"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Let Us Now Praise Famous Men"], ["author", "Linnea Abshire"], ["genre", "Fiction narrative"], ["publisher", "University of California Press"], ["publish_date", "2020-07-02"], ["created_at", "2020-09-18 18:58:38.925242"], ["updated_at", "2020-09-18 18:58:38.925242"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "To Sail Beyond the Sunset"], ["author", "Mr. Jana Lueilwitz"], ["genre", "Mystery"], ["publisher", "Firebrand Books"], ["publish_date", "2020-03-06"], ["created_at", "2020-09-18 18:58:38.946686"], ["updated_at", "2020-09-18 18:58:38.946686"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Eyeless in Gaza"], ["author", "Ivonne Corwin"], ["genre", "Fiction in verse"], ["publisher", "Palgrave Macmillan"], ["publish_date", "2019-12-06"], ["created_at", "2020-09-18 18:58:38.966837"], ["updated_at", "2020-09-18 18:58:38.966837"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Grapes of Wrath"], ["author", "Rev. Alexander Jerde"], ["genre", "Textbook"], ["publisher", "Anvil Press Poetry"], ["publish_date", "2020-01-27"], ["created_at", "2020-09-18 18:58:38.988268"], ["updated_at", "2020-09-18 18:58:38.988268"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Eyeless in Gaza"], ["author", "Darren Ferry I"], ["genre", "Fiction in verse"], ["publisher", "Breslov Research Institute"], ["publish_date", "2020-08-12"], ["created_at", "2020-09-18 18:58:39.008456"], ["updated_at", "2020-09-18 18:58:39.008456"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Brandy of the Damned"], ["author", "Dr. Jay Wyman"], ["genre", "Crime/Detective"], ["publisher", "Blue Ribbon Books"], ["publish_date", "2019-10-11"], ["created_at", "2020-09-18 18:58:39.028692"], ["updated_at", "2020-09-18 18:58:39.028692"]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "O Pioneers!"], ["author", "Refugio VonRueden"], ["genre", "Western"], ["publisher", "FabJob"], ["publish_date", "2019-11-17"], ["created_at", "2020-09-18 18:58:39.050206"], ["updated_at", "2020-09-18 18:58:39.050206"]]
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Far-Distant Oxus"], ["author", "Ricardo Quitzon"], ["genre", "Short story"], ["publisher", "Brill"], ["publish_date", "2020-05-19"], ["created_at", "2020-09-18 18:58:39.070012"], ["updated_at", "2020-09-18 18:58:39.070012"]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Cover Her Face"], ["author", "Nolan Wolff"], ["genre", "Narrative nonfiction"], ["publisher", "Taunton Press"], ["publish_date", "2019-10-13"], ["created_at", "2020-09-18 18:58:39.093502"], ["updated_at", "2020-09-18 18:58:39.093502"]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Recalled to Life"], ["author", "Mrs. Garland McLaughlin"], ["genre", "Fairy tale"], ["publisher", "Imperial War Museum"], ["publish_date", "2020-05-26"], ["created_at", "2020-09-18 18:58:39.111286"], ["updated_at", "2020-09-18 18:58:39.111286"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "All Passion Spent"], ["author", "Pilar Steuber JD"], ["genre", "Comic/Graphic Novel"], ["publisher", "Virago Press"], ["publish_date", "2020-02-16"], ["created_at", "2020-09-18 18:58:39.132590"], ["updated_at", "2020-09-18 18:58:39.132590"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "A Summer Bird-Cage"], ["author", "Kraig Steuber"], ["genre", "Fanfiction"], ["publisher", "Apress"], ["publish_date", "2020-04-16"], ["created_at", "2020-09-18 18:58:39.152675"], ["updated_at", "2020-09-18 18:58:39.152675"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Curious Incident of the Dog in the Night-Time"], ["author", "Will Littel"], ["genre", "Humor"], ["publisher", "Pantheon Books at Random House"], ["publish_date", "2019-10-06"], ["created_at", "2020-09-18 18:58:39.173030"], ["updated_at", "2020-09-18 18:58:39.173030"]]
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.9ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Frequent Hearses"], ["author", "Jess Sporer"], ["genre", "Tall tale"], ["publisher", "Ignatius Press"], ["publish_date", "2019-10-29"], ["created_at", "2020-09-18 18:58:39.194222"], ["updated_at", "2020-09-18 18:58:39.194222"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "As I Lay Dying"], ["author", "Mrs. Guy Brakus"], ["genre", "Suspense/Thriller"], ["publisher", "BBC Books"], ["publish_date", "2019-10-03"], ["created_at", "2020-09-18 18:58:39.214645"], ["updated_at", "2020-09-18 18:58:39.214645"]]
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Noli Me Tangere"], ["author", "Jeffery Miller"], ["genre", "Fairy tale"], ["publisher", "Harcourt Assessment"], ["publish_date", "2019-09-19"], ["created_at", "2020-09-18 18:58:39.235638"], ["updated_at", "2020-09-18 18:58:39.235638"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Heart Is Deceitful Above All Things"], ["author", "Hassan Franecki"], ["genre", "Horror"], ["publisher", "Secker & Warburg"], ["publish_date", "2020-08-21"], ["created_at", "2020-09-18 18:58:39.256010"], ["updated_at", "2020-09-18 18:58:39.256010"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Last Temptation"], ["author", "Jake Hoppe"], ["genre", "Historical fiction"], ["publisher", "George Routledge & Sons"], ["publish_date", "2019-10-28"], ["created_at", "2020-09-18 18:58:39.277086"], ["updated_at", "2020-09-18 18:58:39.277086"]]
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Wings of the Dove"], ["author", "Kelley Sauer"], ["genre", "Narrative nonfiction"], ["publisher", "Anova Books"], ["publish_date", "2020-08-25"], ["created_at", "2020-09-18 18:58:39.297340"], ["updated_at", "2020-09-18 18:58:39.297340"]]
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Other Side of Silence"], ["author", "Jena Schaden"], ["genre", "Speech"], ["publisher", "Newnes"], ["publish_date", "2020-04-27"], ["created_at", "2020-09-18 18:58:39.318094"], ["updated_at", "2020-09-18 18:58:39.318094"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "No Highway"], ["author", "Jerrold Turner II"], ["genre", "Textbook"], ["publisher", "Haynes Manuals"], ["publish_date", "2019-11-05"], ["created_at", "2020-09-18 18:58:39.339190"], ["updated_at", "2020-09-18 18:58:39.339190"]]
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Great Work of Time"], ["author", "Chi Lockman"], ["genre", "Reference book"], ["publisher", "Tammi"], ["publish_date", "2020-02-18"], ["created_at", "2020-09-18 18:58:39.359070"], ["updated_at", "2020-09-18 18:58:39.359070"]]
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (1.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Carrion Comfort"], ["author", "Dacia Von"], ["genre", "Fiction in verse"], ["publisher", "Academic Press"], ["publish_date", "2020-04-07"], ["created_at", "2020-09-18 18:58:39.380277"], ["updated_at", "2020-09-18 18:58:39.380277"]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Sleep the Brave"], ["author", "Genia Harvey"], ["genre", "Suspense/Thriller"], ["publisher", "Shambhala Publications"], ["publish_date", "2019-10-15"], ["created_at", "2020-09-18 18:58:39.401118"], ["updated_at", "2020-09-18 18:58:39.401118"]]
+  [1m[35m (13.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Widening Gyre"], ["author", "Ellis Hamill"], ["genre", "Folklore"], ["publisher", "McClelland and Stewart"], ["publish_date", "2019-12-30"], ["created_at", "2020-09-18 18:58:39.422015"], ["updated_at", "2020-09-18 18:58:39.422015"]]
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Mirror Crack'd from Side to Side"], ["author", "Shannon Cassin"], ["genre", "Metafiction"], ["publisher", "Macmillan Publishers"], ["publish_date", "2020-01-10"], ["created_at", "2020-09-18 18:58:39.441655"], ["updated_at", "2020-09-18 18:58:39.441655"]]
+  [1m[35m (14.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "When the Green Woods Laugh"], ["author", "Vernita Hilpert"], ["genre", "Realistic fiction"], ["publisher", "Chambers Harrap"], ["publish_date", "2020-05-22"], ["created_at", "2020-09-18 18:58:39.461040"], ["updated_at", "2020-09-18 18:58:39.461040"]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Beneath the Bleeding"], ["author", "Ocie Predovic Ret."], ["genre", "Fanfiction"], ["publisher", "Book League of America"], ["publish_date", "2019-09-30"], ["created_at", "2020-09-18 18:58:39.473687"], ["updated_at", "2020-09-18 18:58:39.473687"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Last Enemy"], ["author", "Telma Robel"], ["genre", "Classic"], ["publisher", "Manchester University Press"], ["publish_date", "2020-06-15"], ["created_at", "2020-09-18 18:58:39.485655"], ["updated_at", "2020-09-18 18:58:39.485655"]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Shall not Perish"], ["author", "Sherryl Champlin"], ["genre", "Textbook"], ["publisher", "Reed Publishing"], ["publish_date", "2019-09-30"], ["created_at", "2020-09-18 18:58:39.498418"], ["updated_at", "2020-09-18 18:58:39.498418"]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Painted Veil"], ["author", "Glennie Ortiz II"], ["genre", "Horror"], ["publisher", "Dalkey Archive Press"], ["publish_date", "2020-07-16"], ["created_at", "2020-09-18 18:58:39.510326"], ["updated_at", "2020-09-18 18:58:39.510326"]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Pale Kings and Princes"], ["author", "Fred Erdman"], ["genre", "Realistic fiction"], ["publisher", "Firebrand Books"], ["publish_date", "2019-12-17"], ["created_at", "2020-09-18 18:58:39.523339"], ["updated_at", "2020-09-18 18:58:39.523339"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Fame Is the Spur"], ["author", "Angelika Hudson"], ["genre", "Humor"], ["publisher", "Bantam Books"], ["publish_date", "2020-06-17"], ["created_at", "2020-09-18 18:58:39.535495"], ["updated_at", "2020-09-18 18:58:39.535495"]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Mirror Crack'd from Side to Side"], ["author", "Delmar Heaney"], ["genre", "Western"], ["publisher", "Atheneum Publishers"], ["publish_date", "2020-01-09"], ["created_at", "2020-09-18 18:58:39.547792"], ["updated_at", "2020-09-18 18:58:39.547792"]]
+  [1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Brandy of the Damned"], ["author", "Golda Stoltenberg Ret."], ["genre", "Folklore"], ["publisher", "Signet Books"], ["publish_date", "2020-01-02"], ["created_at", "2020-09-18 18:58:39.569030"], ["updated_at", "2020-09-18 18:58:39.569030"]]
+  [1m[35m (15.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Such, Such Were the Joys"], ["author", "Ryan Quitzon"], ["genre", "Speech"], ["publisher", "G. P. Putnam's Sons"], ["publish_date", "2020-04-23"], ["created_at", "2020-09-18 18:58:39.589334"], ["updated_at", "2020-09-18 18:58:39.589334"]]
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "If I Forget Thee Jerusalem"], ["author", "Johanna O'Conner"], ["genre", "Realistic fiction"], ["publisher", "Borgo Press"], ["publish_date", "2020-01-12"], ["created_at", "2020-09-18 18:58:39.610658"], ["updated_at", "2020-09-18 18:58:39.610658"]]
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Some Buried Caesar"], ["author", "Lillian Ruecker"], ["genre", "Fantasy"], ["publisher", "DAW Books"], ["publish_date", "2019-10-13"], ["created_at", "2020-09-18 18:58:39.630895"], ["updated_at", "2020-09-18 18:58:39.630895"]]
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Skull Beneath the Skin"], ["author", "Glen Dickens"], ["genre", "Biography/Autobiography"], ["publisher", "Sams Publishing"], ["publish_date", "2020-01-30"], ["created_at", "2020-09-18 18:58:39.652642"], ["updated_at", "2020-09-18 18:58:39.652642"]]
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Mr Standfast"], ["author", "Thurman Rempel"], ["genre", "Humor"], ["publisher", "Darakwon Press"], ["publish_date", "2019-10-03"], ["created_at", "2020-09-18 18:58:39.672800"], ["updated_at", "2020-09-18 18:58:39.672800"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.8ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Line of Beauty"], ["author", "Ms. Laverne Tillman"], ["genre", "Crime/Detective"], ["publisher", "Firebrand Books"], ["publish_date", "2020-06-02"], ["created_at", "2020-09-18 18:58:39.693049"], ["updated_at", "2020-09-18 18:58:39.693049"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Jacob Have I Loved"], ["author", "Elroy Erdman"], ["genre", "Comic/Graphic Novel"], ["publisher", "Ladybird Books"], ["publish_date", "2019-10-04"], ["created_at", "2020-09-18 18:58:39.714460"], ["updated_at", "2020-09-18 18:58:39.714460"]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Noli Me Tangere"], ["author", "Nickolas Buckridge"], ["genre", "Tall tale"], ["publisher", "Banner of Truth Trust"], ["publish_date", "2020-06-17"], ["created_at", "2020-09-18 18:58:39.734673"], ["updated_at", "2020-09-18 18:58:39.734673"]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Cover Her Face"], ["author", "Owen Denesik"], ["genre", "Fanfiction"], ["publisher", "Target Books"], ["publish_date", "2019-11-24"], ["created_at", "2020-09-18 18:58:39.754279"], ["updated_at", "2020-09-18 18:58:39.754279"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Tender Is the Night"], ["author", "Madie Boyer"], ["genre", "Western"], ["publisher", "Horizon Scientific Press"], ["publish_date", "2020-01-14"], ["created_at", "2020-09-18 18:58:39.766230"], ["updated_at", "2020-09-18 18:58:39.766230"]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "A Passage to India"], ["author", "Serina Wilderman II"], ["genre", "Legend"], ["publisher", "Indiana University Press"], ["publish_date", "2020-01-10"], ["created_at", "2020-09-18 18:58:39.779002"], ["updated_at", "2020-09-18 18:58:39.779002"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "If I Forget Thee Jerusalem"], ["author", "Donte Corwin"], ["genre", "Comic/Graphic Novel"], ["publisher", "Pan Books"], ["publish_date", "2020-07-28"], ["created_at", "2020-09-18 18:58:39.791130"], ["updated_at", "2020-09-18 18:58:39.791130"]]
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.2ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Down to a Sunless Sea"], ["author", "Prof. Leandro Bartoletti"], ["genre", "Fiction narrative"], ["publisher", "Applewood Books"], ["publish_date", "2020-07-24"], ["created_at", "2020-09-18 18:58:39.802998"], ["updated_at", "2020-09-18 18:58:39.802998"]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I Know Why the Caged Bird Sings"], ["author", "Mila Marks"], ["genre", "Metafiction"], ["publisher", "Andrews McMeel Publishing"], ["publish_date", "2020-02-29"], ["created_at", "2020-09-18 18:58:39.815918"], ["updated_at", "2020-09-18 18:58:39.815918"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "I Will Fear No Evil"], ["author", "Howard Greenholt"], ["genre", "Mystery"], ["publisher", "Elsevier"], ["publish_date", "2020-04-19"], ["created_at", "2020-09-18 18:58:39.827775"], ["updated_at", "2020-09-18 18:58:39.827775"]]
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Golden Bowl"], ["author", "Rev. Rema Stamm"], ["genre", "Short story"], ["publisher", "D. Appleton & Company"], ["publish_date", "2020-04-19"], ["created_at", "2020-09-18 18:58:39.840681"], ["updated_at", "2020-09-18 18:58:39.840681"]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Create (0.3ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "genre", "publisher", "publish_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "The Needle's Eye"], ["author", "Pete Mueller"], ["genre", "Comic/Graphic Novel"], ["publisher", "City Lights Publishers"], ["publish_date", "2019-11-20"], ["created_at", "2020-09-18 18:58:39.852828"], ["updated_at", "2020-09-18 18:58:39.852828"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-09-18 15:13:29 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 10.2ms | Allocations: 407)
+Completed 200 OK in 33ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 2242)
+
+
+Started GET "/books" for ::1 at 2020-09-18 15:13:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2020-09-18 15:19:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2020-09-18 15:20:36 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-09-18 15:21:00 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.9ms | Allocations: 178)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 719)
+
+
+Started GET "/books" for ::1 at 2020-09-18 15:21:05 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs" for ::1 at 2020-09-18 15:22:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/songs"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs/books" for ::1 at 2020-09-18 15:23:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/songs/books"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2020-09-18 15:23:30 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books.json" for ::1 at 2020-09-18 15:25:11 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for BooksController):
+  
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs.json" for ::1 at 2020-09-18 15:25:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/songs.json"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs" for ::1 at 2020-09-18 15:25:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/songs"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books" for ::1 at 2020-09-18 15:28:58 -0400
+Processing by BooksController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 129)
+
+
+Started GET "/books" for ::1 at 2020-09-18 15:29:32 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 138)
+
+
+Started GET "/books" for ::1 at 2020-09-18 15:35:00 -0400
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 3.0ms | Allocations: 21374)
+
+
+Started GET "/books" for ::1 at 2020-09-18 15:38:50 -0400
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 2.5ms | Allocations: 20864)
+
+
+Started GET "/books/1" for ::1 at 2020-09-18 15:46:27 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 67)
+
+
+Started GET "/books/1" for ::1 at 2020-09-18 15:47:53 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:12:in `show'
+Completed 204 No Content in 212ms (ActiveRecord: 4.5ms | Allocations: 5757)
+
+
+Started GET "/books/1" for ::1 at 2020-09-18 15:48:22 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:12:in `show'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 5399)
+
+
+Started GET "/books/99" for ::1 at 2020-09-18 15:48:29 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"99"}
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 99], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 1.5ms | Allocations: 800)
+
+
+Started GET "/books/29" for ::1 at 2020-09-18 15:48:35 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 777)
+
+
+Started GET "/books/42" for ::1 at 2020-09-18 15:48:40 -0400
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:12:in `show'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 776)
+
+
+Started GET "/books/42/edit" for ::1 at 2020-09-18 16:25:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books/42/edit"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/edit/42" for ::1 at 2020-09-18 16:25:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books/edit/42"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/edit/42" for ::1 at 2020-09-18 16:26:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books/edit/42"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/books/edit/42" for ::1 at 2020-09-18 16:27:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/books/edit/42"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/books" for ::1 at 2020-09-18 17:24:48 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+Error occurred while parsing request parameters.
+Contents:
+
+"book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+}
+Started POST "/books" for ::1 at 2020-09-18 17:25:37 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:35: syntax error, unexpected end-of-input, expecting `end'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+  [1m[36mBook Load (16.1ms)[0m  [1m[34mSELECT "books".* FROM "books" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 101], ["LIMIT", 1]]
+Started POST "/books" for ::1 at 2020-09-18 17:28:30 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+Started POST "/books" for ::1 at 2020-09-18 17:29:38 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+    render json {status: 422, book: book}
+                       ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:38: syntax error, unexpected end-of-input, expecting `end'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+Started GET "/books/" for ::1 at 2020-09-18 17:37:39 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+    render json {status: 422, book: book}
+                       ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/books/" for ::1 at 2020-09-18 17:38:00 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+    render json {status: 422, book: book}
+                       ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:44: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/books/" for ::1 at 2020-09-18 17:38:59 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+    render json {status: 422, book: book}
+                       ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:45: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:45: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:24: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:45: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/books" for ::1 at 2020-09-18 17:41:51 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+    render json { status: 422, book: book }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/books" for ::1 at 2020-09-18 17:42:19 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+    render json { status: 422, book: book }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/student_labs/books_app_api/app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/books_controller.rb:23: syntax error, unexpected ':', expecting '}'
+app/controllers/books_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/books" for ::1 at 2020-09-18 17:42:53 -0400
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/controllers/books_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 16.5ms | ActiveRecord: 4.8ms | Allocations: 21169)
+
+
+Started POST "/books" for ::1 at 2020-09-18 17:43:00 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at '{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}'):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:114:in `rescue in parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:110:in `parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:389:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:388:in `POST'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:278:in `_wrapper_enabled?'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+Started POST "/books" for ::1 at 2020-09-18 17:43:35 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
+  
+ActionDispatch::Http::Parameters::ParseError (783: unexpected token at '{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}'):
+  
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:114:in `rescue in parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:110:in `parse_formatted_parameters'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:389:in `block in POST'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch'
+rack (2.2.3) lib/rack/request.rb:69:in `fetch_header'
+actionpack (6.0.3.3) lib/action_dispatch/http/request.rb:388:in `POST'
+actionpack (6.0.3.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:278:in `_wrapper_enabled?'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "book"={
+    "title": "My Death",
+    "author": "me",
+    "genre": "biography/fiction",
+    "publisher": "Random House",
+    "publish_date": "09/18/2020"
+    }
+}
