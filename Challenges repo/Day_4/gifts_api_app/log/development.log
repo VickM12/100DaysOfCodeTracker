@@ -1,0 +1,537 @@
+  [1m[35m (2116.6ms)[0m  [1m[35mCREATE DATABASE "gifts_api_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (2142.1ms)[0m  [1m[35mCREATE DATABASE "gifts_api_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (73.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3846713061112604235)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGifts (20200919200605)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "description" character varying, "value" integer, "event" character varying, "gift_giver" character varying)[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(3846713061112604235)[0m
+Started GET "/" for ::1 at 2020-09-19 16:15:43 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-09-19 16:15:43 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.3) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.3) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3846713061112604235)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(3846713061112604235)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-09-19 16:18:20 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/vicktor/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-6.0.3.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.0ms | Allocations: 183)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1010)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-09-19 16:18:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gifts" for ::1 at 2020-09-19 16:18:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/gifts"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gifts" for ::1 at 2020-09-19 16:19:15 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, books: Book.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, books: Book.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts" for ::1 at 2020-09-19 16:19:58 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, books: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, books: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/gift" for ::1 at 2020-09-19 16:20:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/gift"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gift.json" for ::1 at 2020-09-19 16:20:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/gift.json"):
+  
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:20:39 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, books: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, books: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:21:23 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, gifts: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, gifts: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:22:08 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, gifts: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, gifts: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:22:49 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, gifts: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, gifts: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+  gift = Gift.find(params[:id})
+                             ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+...gift = Gift.destroy(params[:id})
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:27: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:33: syntax error, unexpected '}', expecting ']'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:24:30 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{ status:200, gifts: Gift.all }
+                        ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...{ status:200, gifts: Gift.all }
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:24:59 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{status:200, gifts: Gift.all}
+                       ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...on{status:200, gifts: Gift.all}
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:25:46 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+    render json{status:200, gifts: Gift.all}
+                       ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+...on{status:200, gifts: Gift.all}
+...                              ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:4: syntax error, unexpected integer literal, expecting literal content or terminator or tSTRING_DBEG or tSTRING_DVAR
+app/controllers/gifts_controller.rb:4: syntax error, unexpected '}', expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:43: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:26:32 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+      render json { status: 201, gift: gift }
+                          ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+    render json { status: 200, gift:gift }
+                        ^
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:21: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:29: syntax error, unexpected ':', expecting '}'
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:27:08 -0400
+  
+SyntaxError (/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:22: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+... else render json: { status 422, gift: gift }
+...                            ^~~
+/home/vicktor/GA/SEIR-Arete-repo/unit_4/w10d05/homework/gifts_api_app/app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/gifts_controller.rb:22: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/gifts_controller.rb:22: syntax error, unexpected integer literal, expecting `do' or '{' or '('
+app/controllers/gifts_controller.rb:42: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/gifts.json" for ::1 at 2020-09-19 16:28:05 -0400
+Processing by GiftsController#index as JSON
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  ↳ app/controllers/gifts_controller.rb:4:in `index'
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 3.0ms | Allocations: 6380)
+
+
