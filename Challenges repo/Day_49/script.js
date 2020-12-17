@@ -5,7 +5,7 @@ let fibonacci = (n) =>{
   return fibonacci(n - 1) + fibonacci(n - 2)
   
 };
-console.log(fibonacci(5))
+console.log('Stricly recursive result is', fibonacci(5))
 
 let fibonacci2 = (n2, memo) => {
   memo = memo || {}
@@ -17,7 +17,7 @@ let fibonacci2 = (n2, memo) => {
   }; 
   return memo[n2] = fibonacci2(n2 - 1, memo) + fibonacci2(n2 - 2, memo)
 }
-console.log(fibonacci2(5))
+console.log('Recursive plus memoization result is ', fibonacci2(5))
 
 let memoizer = (fun) => {
   let cache = {}
@@ -31,6 +31,5 @@ let memoizer = (fun) => {
     }
   }
 }
-
 const fibMemoFunction = memoizer(fibonacci)
-console.log(fibMemoFunction(5))
+console.log('Memoization as a higher order function result is ', fibMemoFunction(5))
